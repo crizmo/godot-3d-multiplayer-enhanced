@@ -1,0 +1,61 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Godot as Host",
+            "type": "shell",
+            "command": "/home/kurizu/Documents/Apps/Godot_v4.3-stable_linux.x86_64",
+            "args": [
+                "--path",
+                "/home/kurizu/Documents/GitHub/multi",
+                "--host",
+                "--name",
+                "Host",
+                "--color",
+                "red",
+                "--ip",
+                "127.0.0.1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Godot as Client",
+            "type": "shell",
+            "command": "/home/kurizu/Documents/Apps/Godot_v4.3-stable_linux.x86_64",
+            "args": [
+                "--path",
+                "/home/kurizu/Documents/GitHub/multi",
+                "--",
+                "--name",
+                "Kurizu",
+                "--color",
+                "blue",
+                "--ip",
+                "127.0.0.1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Run Godot as Host and Client",
+            "type": "shell",
+            "command": "sh",
+            "args": [
+                "-c",
+                "/home/kurizu/Documents/Apps/Godot_v4.3-stable_linux.x86_64 --path /home/kurizu/Documents/GitHub/multi --host --name Host --color red --ip 127.0.0.1 & sleep 5 && /home/kurizu/Documents/Apps/Godot_v4.3-stable_linux.x86_64 --path /home/kurizu/Documents/GitHub/multi -- --name Kurizu --color blue --ip 127.0.0.1"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
